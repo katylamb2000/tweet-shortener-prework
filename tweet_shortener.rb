@@ -12,4 +12,5 @@ end
 
 def word_substituter (tweet)
   tweet.split (" ")
-  tweet.each 
+  tweet.each do |word|
+  if word == words
