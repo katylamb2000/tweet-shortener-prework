@@ -10,10 +10,13 @@ def dictionary
 "and" => "&"}
 end
 
-def word_substituter (tweet)
-  tweet.split (" ")
-  tweet.each do |word|
-  if word == words.key
-    word.sub (words.key, words.value)
-  end
-end
+def word_substituter(string) 
+  string.split.collect do |word|
+    if dictionary.keys.include?(word.downcase)
+      word = dictionary[word.downcase]
+    else 
+      word 
+    end 
+  end.join(" ")
+end 
+word_substituter(tweet_one)
